@@ -1,0 +1,22 @@
+*{
+    background-color: bisque;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    color:blue;
+    text-align: center;
+    
+}
+*:hover{
+    color: blueviolet;
+    font-size: xx-large;
+}
+
+/* .contenido{
+    color:blue;
+    text-align: center;
+}
+
+.contenido:hover{
+    color: blueviolet;
+    font-size: xx-large;
+} */
