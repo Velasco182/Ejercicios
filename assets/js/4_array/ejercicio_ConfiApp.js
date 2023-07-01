@@ -1,23 +1,35 @@
-const tutores = [
-    {nombre:"Elkin", edad:50, correo:"Elkin@Dura.com"},
-    {nombre:"Samuel", edad:40, correo:"Samuel@Dura.com"},
-    {nombre:"Gloria", edad:30, correo:"Gloria@Dura.com"},
-    
-   ];
+function Arrays() {
+    const tutores = [
+        { nombre: "Elkin", edad: 50, correo: "Elkin@Dura.com" },
+        { nombre: "Samuel", edad: 40, correo: "Samuel@Dura.com" },
+        { nombre: "Gloria", edad: 30, correo: "Gloria@Dura.com" },
+    ];
 
-const menores = [
-    {nombre:"Santi", edad:15, pasta:"Santi@Dura.es"},
-    {nombre:"Cami", edad:12, pasta:"Cami@Dura.es"},
-    {nombre:"Nico", edad:17, pasta:"Nico@Dura.es"},
-];
+    const menores = [
+        { nombre: "Santi", edad: 15, correo: "Santi@Dura.es" },
+        { nombre: "Cami", edad: 12, correo: "Cami@Dura.es" },
+        { nombre: "Nico", edad: 17, correo: "Nico@Dura.es" },
+    ];
 
-for(let t=0;t<tutores.length;t++){
-    console.log(`El nombre del tutor es: ${tutores[t].nombre}, y ${menores[t].nombre} es el menor`);
-    console.table(tutores[t]);
-    console.table(menores[t]);
+    const notasContainer = document.querySelector('.notas');
+    notasContainer.innerHTML = '';
 
-    // document.querySelector("div").innerHTML = JSON.stringify(tutores[t]);
-    document.getElementById("info").innerHTML = "Los menores son" + menores[t];
+    for (let t = 0; t < tutores.length; t++) {
+        const tutor = tutores[t];
+        const menor = menores[t];
+        const tutorInfo = `<p>El nombre del tutor es: ${tutor.nombre}, y ${menor.nombre} es el menor</p>`;
+        const tutorTable = `<table class="table table-hover"><tr><th>Nombre</th><th>Edad</th><th>Correo</th></tr><tr><td>${tutor.nombre}</td><td>${tutor.edad}</td><td>${tutor.correo}</td></tr></table>`;
+        const menorTable = `<table class="table table-hover"><tr><th>Nombre</th><th>Edad</th><th>Correo</th></tr><tr><td>${menor.nombre}</td><td>${menor.edad}</td><td>${menor.correo}</td></tr></table>`;
 
-    // document.write(tutores[t], menores[t]);
+        const row = document.createElement('div');
+        row.innerHTML = tutorInfo + tutorTable + menorTable;
+        notasContainer.appendChild(row);
+
+        console.log(`El nombre del tutor es: ${tutores[t].nombre}, y ${menores[t].nombre} es el menor`);
+        console.table(tutores[t]);
+        console.table(menores[t]);
+
+    }
 }
+
+

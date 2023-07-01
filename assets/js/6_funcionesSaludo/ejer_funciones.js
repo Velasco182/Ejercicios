@@ -1,30 +1,36 @@
-alert("¡BIENVENIDO A CONFIAPP!");
-alert("¡Regístrate ahora!");
-nom = prompt("Ingresa tu nombre: ");
-apellido = prompt("Ingresa tu apellido: ");
-ciudad = prompt("Ingresa tu ciudad: ");
-pwd = prompt("Ingresa una contraseña");
-alert("¡Registro Exitoso!");
+function Funciones() {
+  alert("¡BIENVENIDO A CONFIAPP!");
+  alert("¡Regístrate ahora!");
+  nom = prompt("Ingresa tu nombre: ");
+  apellido = prompt("Ingresa tu apellido: ");
+  ciudad = prompt("Ingresa tu ciudad: ");
+  pwd = prompt("Ingresa una contraseña");
+  alert("¡Registro Exitoso!");
 
-inicio(nom, pwd);
+  inicio(nom, pwd);
 
-/*function registro() {
-  
-  return nom, pwd;
-}*/
+  function inicio(nom, pwd) {
+    let nombre = prompt("Ingresa tu usuario: ");
+    let pw = prompt("Ingresa tu contraseña: ");
 
-function inicio(nom, pwd) {
+    if (nombre == nom && pw == pwd) {
+      alert("Inicio de sesión exitoso.");
+      console.log(`Bienvenido ${nombre}, te encuentras en ${ciudad}.`);
+      mostrarInformacion(nombre, ciudad);
+    } else {
+      alert("Usuario o contraseña inválido");
+    }
+  }
 
-  //registro();
+  function mostrarInformacion(nombre, ciudad) {
+    const notasContainer = document.querySelector('.notas');
+    notasContainer.innerHTML = '';
 
-  let nombre = prompt("Ingresa tu usuario: ");
-  let pw = prompt("Ingresa tu contraseña: ");
+    const mensaje = `<p>Bienvenido ${nombre}, te encuentras en ${ciudad}.</p>`;
 
-  if (nombre == nom && pw == pwd) {
-    alert("Inicio de sesión exitoso.")
-    console.log(`Bienvenido ${nombre}, te encuentras en ${ciudad}.`)
-
-  } else {
-    alert("Usuario o contraseña inválido");
+    const row = document.createElement('div');
+    row.innerHTML = mensaje;
+    notasContainer.appendChild(row);
   }
 }
+
